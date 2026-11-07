@@ -3,6 +3,18 @@
 Scanner de documents pour Android : gratuit, sans filigrane, sans pub, sans compte.
 Tout est traité **sur le téléphone, hors ligne**. Aucune donnée ne sort de l'appareil.
 
+<p align="center">
+  <img src="docs/screenshots/library.png" width="24%" alt="Bibliothèque">
+  <img src="docs/screenshots/page.png" width="24%" alt="Page et filtres">
+  <img src="docs/screenshots/ocr.png" width="24%" alt="Texte reconnu (OCR)">
+  <img src="docs/screenshots/export.png" width="24%" alt="Export PDF, JPG, texte ou Word">
+</p>
+<p align="center">
+  <img src="docs/screenshots/settings.png" width="24%" alt="Réglages, thème clair">
+  <img src="docs/screenshots/settings_dark.png" width="24%" alt="Réglages, thème sombre">
+  <img src="docs/screenshots/library_dark.png" width="24%" alt="Bibliothèque, thème sombre">
+</p>
+
 ## Fonctionnalités
 
 - **Scan** multi-pages avec détection automatique des bords (ML Kit), import depuis la galerie
@@ -18,6 +30,7 @@ Tout est traité **sur le téléphone, hors ligne**. Aucune donnée ne sort de l
 - **QR codes et codes-barres** (caméra ou image)
 - **Partage** : « Ouvrir avec SCAN » depuis les autres apps, envoi vers WhatsApp, e-mail…
 - **Sauvegarde / restauration** complète en ZIP
+- **Thème** clair, sombre ou celui du système
 
 ## Stack
 

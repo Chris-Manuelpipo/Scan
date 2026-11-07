@@ -193,27 +193,12 @@ class _ExportSheetState extends ConsumerState<_ExportSheet> {
           const SizedBox(height: 16),
           _label('Format'),
           SegmentedButton<ExportFormat>(
+            // Labels only: four icon + label segments wrap on narrow phones.
             segments: const [
-              ButtonSegment(
-                value: ExportFormat.pdf,
-                label: Text('PDF'),
-                icon: Icon(Icons.picture_as_pdf_outlined),
-              ),
-              ButtonSegment(
-                value: ExportFormat.jpg,
-                label: Text('JPG'),
-                icon: Icon(Icons.image_outlined),
-              ),
-              ButtonSegment(
-                value: ExportFormat.txt,
-                label: Text('Texte'),
-                icon: Icon(Icons.text_snippet_outlined),
-              ),
-              ButtonSegment(
-                value: ExportFormat.docx,
-                label: Text('Word'),
-                icon: Icon(Icons.description_outlined),
-              ),
+              ButtonSegment(value: ExportFormat.pdf, label: Text('PDF')),
+              ButtonSegment(value: ExportFormat.jpg, label: Text('JPG')),
+              ButtonSegment(value: ExportFormat.txt, label: Text('Texte')),
+              ButtonSegment(value: ExportFormat.docx, label: Text('Word')),
             ],
             showSelectedIcon: false,
             selected: {_format},
