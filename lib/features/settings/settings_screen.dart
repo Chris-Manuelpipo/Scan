@@ -70,6 +70,32 @@ class SettingsScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text('Réglages')),
       body: ListView(
         children: [
+          _Header('Apparence'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: SegmentedButton<ThemeMode>(
+              segments: const [
+                ButtonSegment(
+                  value: ThemeMode.system,
+                  icon: Icon(Icons.brightness_auto_outlined),
+                  label: Text('Système'),
+                ),
+                ButtonSegment(
+                  value: ThemeMode.light,
+                  icon: Icon(Icons.light_mode_outlined),
+                  label: Text('Clair'),
+                ),
+                ButtonSegment(
+                  value: ThemeMode.dark,
+                  icon: Icon(Icons.dark_mode_outlined),
+                  label: Text('Sombre'),
+                ),
+              ],
+              selected: {ref.watch(themeModeProvider)},
+              onSelectionChanged: (selection) =>
+                  ref.read(themeModeProvider.notifier).set(selection.first),
+            ),
+          ),
           _Header('Scan'),
           ListTile(
             leading: const Icon(Icons.auto_fix_high_outlined),

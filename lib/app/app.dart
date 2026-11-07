@@ -13,6 +13,7 @@ import '../features/ocr/ocr_text_screen.dart';
 import '../features/scan/barcode_screen.dart';
 import '../features/scan/scan_actions.dart';
 import '../features/settings/settings_screen.dart';
+import 'providers.dart';
 
 final _navigatorKey = GlobalKey<NavigatorState>();
 
@@ -63,18 +64,19 @@ final _router = GoRouter(
   ],
 );
 
-class ScanApp extends StatelessWidget {
+class ScanApp extends ConsumerWidget {
   const ScanApp({super.key});
 
   static const _seed = Color(0xFF0F766E);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
       title: 'SCAN',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: _seed),
       darkTheme: ThemeData(colorSchemeSeed: _seed, brightness: Brightness.dark),
+      themeMode: ref.watch(themeModeProvider),
       routerConfig: _router,
       builder: (context, child) => _SharedFilesListener(child: child!),
     );

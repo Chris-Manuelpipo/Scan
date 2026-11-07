@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart' show ThemeMode;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -101,7 +102,13 @@ final defaultFilterProvider =
       ),
     );
 
-typedef DocumentQuery = ({int? folderId, String search});
+/// Light, dark, or follow the system.
+final themeModeProvider =
+    NotifierProvider<EnumPreference<ThemeMode>, ThemeMode>(
+      () => EnumPreference('themeMode', ThemeMode.values, ThemeMode.system),
+    );
+
+typedef DocumentQuery =({int? folderId, String search});
 
 final documentsProvider =
     StreamProvider.family<List<DocumentSummary>, DocumentQuery>(
